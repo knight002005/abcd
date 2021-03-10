@@ -1,0 +1,46 @@
+﻿@model IEnumerable<abvfdv.Models.gia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gia_goc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia_khuyen_mai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngay_ap_dung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia_goc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia_khuyen_mai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngay_ap_dung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ma_gia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ma_gia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ma_gia })
+        </td>
+    </tr>
+}
+
+</table>
